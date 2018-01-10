@@ -19,6 +19,7 @@ class CreateArtigosTable extends Migration
             $table->string('descricao');
             $table->text('conteudo');
             $table->dateTime('data');
+            $table->integer('user_id')->unsigned()->default('1');
             $table->timestamps();
             $table->softDeletes();
         });
