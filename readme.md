@@ -2,22 +2,22 @@
 
 ## Lavavel version 5.5 with VueJs 2.1
 
-1 º - create a file .env based on .env_example and set your database access
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+<p><b>1 º - create a file .env based on .env_example and set your database access</b></p>
+<p>DB_DATABASE=homestead</p>
+<p>DB_USERNAME=homestead</p>
+<p>DB_PASSWORD=secret</p>
 
-2º - Access the project directory and run the following commands.
-npm install (install required packages)
-npm run dev (compiled files)
-php artisan key:generate (gerenate a key for laravel)
-php artisan migrate (create migrations in the database)
-php artisan db:seed (create admin user and 1st article) 
-php artisan serve (start service)
+<p><b>2º - Access the project directory and run the following commands.</b></p>
+<p>npm install (install required packages)</p>
+<p>npm run dev (compiled files)</p>
+<p>php artisan key:generate (gerenate a key for laravel)</p>
+<p>php artisan migrate (create migrations in the database)</p>
+<p>php artisan db:seed (create admin user and 1st article)</p>
+<p>php artisan serve (start service)</p>
 
-If everything went well, you can access the system.
-E-Mail Address: admin@admin.com
-Password: 123456
+<p>If everything went well, you can access the system.
+<p>E-Mail Address: admin@admin.com</p>
+<p>Password: 123456</p>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
