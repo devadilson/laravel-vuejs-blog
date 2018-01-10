@@ -1,6 +1,6 @@
 ## How to use ?
 
-## Lavavel version 5.5 with VueJs 2.1
+## Laravel version 5.5 with VueJs 2.1
 
 <p><b>1 º - create a file .env based on .env_example and set your database access</b></p>
 <p>DB_DATABASE=homestead</p>
