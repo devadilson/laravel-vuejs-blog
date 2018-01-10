@@ -1,0 +1,10 @@
+.env
+dicas.txt
+
+node_modules/
+npm-debug.log
+
+storage/logs
+storage/*.key
+Homestead.json
+*log
