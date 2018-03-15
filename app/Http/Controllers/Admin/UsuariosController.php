@@ -21,7 +21,7 @@ class UsuariosController extends Controller
         ["titulo"=>"Lista de Usuários","url"=>""]
       ]);
 
-      $listaModelo = User::select('id','name','email')->paginate(5);
+      $listaModelo = User::select('id','name','email','autor','admin')->paginate(5);
 
       return view('admin.usuarios.index',compact('listaMigalhas','listaModelo'));
     }
@@ -56,6 +56,7 @@ class UsuariosController extends Controller
       }
 
       $data['password'] = bcrypt($data['password']);
+      $data['autor'] = "S";
 
       User::create($data);
       return redirect()->back();
@@ -108,9 +109,7 @@ class UsuariosController extends Controller
         ]);
         unset($data['password']);
       }
-
-
-
+      
       if($validacao->fails()){
         return redirect()->back()->withErrors($validacao)->withInput();
       }

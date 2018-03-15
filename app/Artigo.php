@@ -22,14 +22,29 @@ class Artigo extends Model
     
     public static function listaArtigos($paginate)
     {
-        $listaArtigos = Artigo::select('id','titulo','descricao','user_id','data')->paginate($paginate);
-        foreach ($listaArtigos as $key => $value) {
-            //Primeira e Melhor Possibilidade de Consulta
-            $value->user_id = User::find($value->user_id)->name;
-            //$value->data = \Carbon\Carbon::parse($value->data)->format('d-m-Y');
-            //Segunda Possibilidade de Consulta utilizando o Model
-            //$value->user_id = $value->user_name;
-            //unset($value->user);
+        $user = auth()->user();
+
+        if($user->admin == "S"){
+            $listaArtigos = Artigo::select('id','titulo','descricao','user_id','data')->paginate($paginate);
+            foreach ($listaArtigos as $key => $value) {
+                //Primeira e Melhor Possibilidade de Consulta
+                $value->user_id = User::find($value->user_id)->name;
+                $value->data = \Carbon\Carbon::parse($value->data)->format('d-m-Y');
+                //Segunda Possibilidade de Consulta utilizando o Model
+                //$value->user_id = $value->user_name;
+                //unset($value->user);
+            }
+        }else
+        {
+            $listaArtigos = Artigo::select('id','titulo','descricao','user_id','data')->where('user_id','=',$user->id)->paginate($paginate);
+            foreach ($listaArtigos as $key => $value) {
+                //Primeira e Melhor Possibilidade de Consulta
+                $value->user_id = User::find($value->user_id)->name;
+                $value->data = \Carbon\Carbon::parse($value->data)->format('d-m-Y');
+                //Segunda Possibilidade de Consulta utilizando o Model
+                //$value->user_id = $value->user_name;
+                //unset($value->user);
+            }
         }
 
             //Terceira Possibilidade de Consulta, utilizando relacionamento manual pelo DB

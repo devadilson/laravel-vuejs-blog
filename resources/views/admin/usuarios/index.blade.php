@@ -17,7 +17,7 @@
 
 
       <tabela-lista
-      v-bind:titulos="['#','Nome','E-mail']"
+      v-bind:titulos="['#','Nome','E-mail','Autor','Admin']"
       v-bind:itens="{{json_encode($listaModelo)}}"
       ordem="desc" ordemcol="1"
       criar="#criar" detalhe="/admin/usuarios/" editar="/admin/usuarios/" deletar="/admin/usuarios/" token="{{ csrf_token() }}"

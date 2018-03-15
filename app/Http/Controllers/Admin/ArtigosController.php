@@ -57,7 +57,9 @@ class ArtigosController extends Controller
           return redirect()->back()->withErrors($validacao)->withInput();
         }
 
-        Artigo::create($data);
+        $user = auth()->user();
+        $user->artigos()->create($data);
+
         return redirect()->back();
     }
 
@@ -104,7 +106,9 @@ class ArtigosController extends Controller
         return redirect()->back()->withErrors($validacao)->withInput();
       }
 
-      Artigo::find($id)->update($data);
+      $user = auth()->user();
+      $user->artigos()->find($id)->update($data);
+
       return redirect()->back();
     }
 
