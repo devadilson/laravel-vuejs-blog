@@ -44613,53 +44613,57 @@ var render = function() {
       attrs: { id: _vm.nome, tabindex: "-1", role: "dialog" }
     },
     [
-      _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
-        _c("div", { staticClass: "modal-content" }, [
-          _c("div", { staticClass: "modal-header" }, [
-            _vm._m(0),
+      _c(
+        "div",
+        { staticClass: "modal-dialog modal-lg", attrs: { role: "document" } },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h4", { staticClass: "modal-title" }, [
+                _vm._v(_vm._s(_vm._f("capitalize")(_vm.nome)))
+              ])
+            ]),
             _vm._v(" "),
-            _c("h4", { staticClass: "modal-title" }, [
-              _vm._v(_vm._s(_vm._f("capitalize")(_vm.nome)))
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "modal-footer" },
-            [
-              _vm._t("botoes"),
-              _vm._v(" "),
-              _vm.nome === "deletar"
-                ? _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger",
-                      attrs: { type: "button", "data-dismiss": "modal" },
-                      on: {
-                        click: function($event) {
-                          _vm.deleteData(_vm.$store.state.item.id, _vm.api)
+            _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "modal-footer" },
+              [
+                _vm._t("botoes"),
+                _vm._v(" "),
+                _vm.nome === "deletar"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { type: "button", "data-dismiss": "modal" },
+                        on: {
+                          click: function($event) {
+                            _vm.deleteData(_vm.$store.state.item.id, _vm.api)
+                          }
                         }
-                      }
-                    },
-                    [_vm._v("Remover")]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default",
-                  attrs: { type: "button", "data-dismiss": "modal" }
-                },
-                [_vm._v("Close")]
-              )
-            ],
-            2
-          )
-        ])
-      ])
+                      },
+                      [_vm._v("Remover")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-default",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                )
+              ],
+              2
+            )
+          ])
+        ]
+      )
     ]
   )
 }
