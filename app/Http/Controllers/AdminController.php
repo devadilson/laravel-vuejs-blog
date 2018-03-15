@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function index()
     {
         $listaMigalhas = json_encode([
-          ["titulo"=>"Admin","url"=>""]
+          ["titulo"=>"Dashboard","url"=>""]
         ]);
 
         $totalArtigos = Artigo::count();
